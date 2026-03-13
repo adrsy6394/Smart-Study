@@ -1,0 +1,99 @@
+﻿
+> frontend@0.0.0 build
+> vite build
+
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 1738 modules transformed.
+node.exe : 
+[31mΓ£ù[39m 
+Build failed in 
+4.30s
+At line:1 char:1
++ & "C:\Program F
+iles\nodejs/node.
+exe" "C:\Program 
+Files\nodejs/node
+_mo ...
++ ~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
+~~~
+    + CategoryIn 
+   fo            
+  : NotSpecifi   
+ ed: ([31mΓ£    
+ù[39m Build     
+failed in 4    
+.30s:String)     
+[], RemoteE    
+xception
+    + FullyQuali 
+   fiedErrorId   
+  : NativeComm   
+ andError
+ 
+[31merror 
+during build:
+[31m[vite:load-f
+allback] Could 
+not load C:\Users
+\DELL\OneDrive\De
+sktop\SmartStudy\
+frontend\src/comp
+onents/ui/input 
+(imported by src/
+pages/auth/Regist
+er.jsx): ENOENT: 
+no such file or 
+directory, open '
+C:\Users\DELL\One
+Drive\Desktop\Sma
+rtStudy\frontend\
+src\components\ui
+\input'[31m
+    at async 
+open (node:intern
+al/fs/promises:64
+1:25)
+    at async 
+Object.readFile (
+node:internal/fs/
+promises:1245:14)
+    at async 
+Object.handler (f
+ile:///C:/Users/D
+ELL/OneDrive/Desk
+top/SmartStudy/fr
+ontend/node_modul
+es/vite/dist/node
+/chunks/config.js
+:33169:21)
+    at async Plug
+inDriver.hookFirs
+tAndGetPlugin (fi
+le:///C:/Users/DE
+LL/OneDrive/Deskt
+op/SmartStudy/fro
+ntend/node_module
+s/rollup/dist/es/
+shared/node-entry
+.js:22453:28)
+    at async file
+:///C:/Users/DELL
+/OneDrive/Desktop
+/SmartStudy/front
+end/node_modules/
+rollup/dist/es/sh
+ared/node-entry.j
+s:21445:33
+    at async 
+Queue.work (file:
+///C:/Users/DELL/
+OneDrive/Desktop/
+SmartStudy/fronte
+nd/node_modules/r
+ollup/dist/es/sha
+red/node-entry.js
+:22681:32)[39m
