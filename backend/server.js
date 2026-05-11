@@ -8,9 +8,13 @@ const connectDB = require('./config/db');
 const app = express();
 
 // Middleware
-app.use(helmet());
+// app.use(helmet()); // Temporarily disable for debugging
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: [
+    'http://localhost:5173',
+    'http://127.0.0.1:5173',
+    'http://localhost:3000'
+  ],
   credentials: true,
 }));
 app.use(express.json());
@@ -20,11 +24,9 @@ app.use(cookieParser());
 // Routes
 const authRoutes = require('./routes/authRoutes');
 const aiRoutes = require('./routes/aiRoutes');
-const adminRoutes = require('./routes/adminRoutes');
 
 app.use('/api', authRoutes);
 app.use('/api/ai', aiRoutes);
-app.use('/api/admin', adminRoutes);
 
 // Base sanity check route
 app.get('/', (req, res) => {

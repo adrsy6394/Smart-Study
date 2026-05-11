@@ -50,7 +50,8 @@ const SubjectMarksForm = ({ onAnalysisComplete }) => {
            description: 'Your academic performance has been analyzed by AI.'
         });
         if (onAnalysisComplete) {
-          onAnalysisComplete(response.data.data.analysis, response.data.data.record);
+          // Backend sends: { success, data: record, analysis: analysisResult }
+          onAnalysisComplete(response.data.analysis, response.data.data);
         }
         // Reset form after successful submission
         setSubjects([{ name: '', marks: '' }]);

@@ -8,7 +8,6 @@ const jwt = require('jsonwebtoken');
 const registerUser = async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
-
     if (!name || !email || !password) {
       return res.status(400).json({ success: false, message: 'Please add all required fields' });
     }
@@ -29,6 +28,16 @@ const registerUser = async (req, res) => {
     });
 
     if (user) {
+      // Sign JWT and set cookie (same as loginUser)
+      const payload = { userId: user.id, role: user.role, email: user.email };
+      const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '7d' });
+      res.cookie('token', token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'strict',
+        maxAge: 7 * 24 * 60 * 60 * 1000,
+      });
+
       res.status(201).json({
         success: true,
         data: {
@@ -42,6 +51,7 @@ const registerUser = async (req, res) => {
       res.status(400).json({ success: false, message: 'Invalid user data' });
     }
   } catch (error) {
+    console.error('Registration error:', error);
     res.status(500).json({ success: false, message: error.message });
   }
 };

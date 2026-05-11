@@ -58,7 +58,8 @@ const getStudyPlan = async (req, res) => {
   try {
     const studyPlan = await StudyPlan.findOne({ userId: req.user.userId });
     if (!studyPlan) {
-        return res.status(404).json({ success: false, message: 'No active study plan found.' });
+        // Return 200 with no data rather than 404 — a missing plan is a normal state, not an error
+        return res.status(200).json({ success: true, data: null });
     }
     res.status(200).json({
       success: true,

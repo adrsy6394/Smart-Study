@@ -33,7 +33,7 @@ ${JSON.stringify(subjects, null, 2)}`;
   try {
     const response = await openai.chat.completions.create({
       // Using a free/accessible model available on OpenRouter for prototyping logic
-      model: "google/gemini-2.5-flash-pro", 
+      model: "google/gemini-2.0-flash-001", 
       messages: [
         { role: "system", content: systemPrompt },
         { role: "user", content: userPrompt }
@@ -83,7 +83,7 @@ Please generate the study plan.`;
 
   try {
     const response = await openai.chat.completions.create({
-      model: "google/gemini-2.5-flash-pro", 
+      model: "google/gemini-2.0-flash-001", 
       messages: [
         { role: "system", content: systemPrompt },
         { role: "user", content: userPrompt }
@@ -130,7 +130,7 @@ Please recommend resources.`;
 
   try {
     const response = await openai.chat.completions.create({
-      model: "google/gemini-2.5-flash-pro", 
+      model: "google/gemini-2.0-flash-001", 
       messages: [
         { role: "system", content: systemPrompt },
         { role: "user", content: userPrompt }
